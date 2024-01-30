@@ -2,14 +2,96 @@ import React from "react";
 import backgroundImage from "../assets/img/HeaderBackground.jpg";
 import BirthAIIphone from "../assets/img/BirthdAIiPhoneMockup.png";
 import GooglePlayBadge from "../assets/img/google-play-badge.svg";
+import RileyIphone from "../assets/img/RileyiPhoneMockup.png";
+import AppStoreBadge from "../assets/img/app-store-badge.svg";
+import CTABackground from "../assets/img/CTABackground.jpg";
+import MobileAIApplication from "../assets/img/HeroSectionImage.png";
+
+import { Link } from "react-router-dom";
 
 export const Home = () => {
-  const headerStyle = {
+  const CTAStyle = {
+    backgroundImage: `url(${CTABackground})`,
+  };
+  const BackgroundStyle = {
     backgroundImage: `url(${backgroundImage})`,
   };
   return (
     <>
-      {/* Apps*/}
+      <>
+        <header className="masthead" style={BackgroundStyle}>
+          <div className="container px-5">
+            <div className="row gx-5 align-items-center">
+              <div className="col-lg-7">
+                {/* Mashead text and app badges*/}
+                <div className="text-white mb-5 mb-lg-0 text-center text-lg-start">
+                  <h1 className="display-1 lh-1 mb-3">
+                    Smart AI Tools For Everyone
+                  </h1>
+                  <p className="lead fw-normal mb-5">
+                    Welcome to Navegaid, where the future of personal
+                    productivity and habit formation is being reimagined.
+                  </p>
+                  <p className="lead fw-normal mb-5">
+                    In a world where every second counts, our AI-driven tools
+                    are designed to seamlessly integrate into your daily
+                    routine, empowering you to live more efficiently and
+                    mindfully.
+                  </p>
+                </div>
+              </div>
+              <div className="col-lg-5">
+                <div className="px-5 px-sm-0">
+                  <img
+                    className="img-fluid"
+                    src={MobileAIApplication}
+                    alt="AI Mobile Applications"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <header className="masthead d-block d-lg-none" style={BackgroundStyle}>
+          <div className="container px-5">
+            <div className="row gx-5 align-items-center">
+              <div className="text-white col-lg-6">
+                {/* Mashead text and app badges*/}
+                <div className="mb-5 mb-lg-0 text-center text-lg-start">
+                  <h1 className="display-1 lh-1 mb-3">
+                    Smart AI Tools For Everyone
+                  </h1>
+                </div>
+                <div className="col-lg-6">
+                  {/* Masthead device mockup feature*/}
+                  <div className="masthead-device-mockup mb-5">
+                    <div className="col-lg-5">
+                      <div className="px-5 px-sm-0">
+                        <img
+                          className="img-fluid"
+                          src={MobileAIApplication}
+                          alt="AI Mobile Applications"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="mb-5 mb-lg-0 text-center text-lg-start">
+                  <p className="lead fw-normal mb-5">
+                    Welcome to Navegaid, where the future of personal
+                    productivity and habit formation is being reimagined.
+                  </p>
+                  {/* <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center">
+                          <a class="me-lg-3 mb-4 mb-lg-0" href="riley.html"><img class="app-badge" src="assets/img/google-play-badge.svg" alt="..." /></a>
+                          <a href="riley.html"><img class="app-badge" src="assets/img/app-store-badge.svg" alt="..." /></a>
+                      </div> */}
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+      </>
+
       <section id="apps">
         <h2 className="text-center display-3 lh-1 mb-4">
           Discover Our AI-Powered Apps.
@@ -38,12 +120,12 @@ export const Home = () => {
                           Craft personalized birthday wishes and set birthday
                           reminders. With Birthd.AI, every message feels special
                           and unique.
-                          <a href="birthdai.html" target="_blank">
+                          <Link href="birthdai.html" target="_blank">
                             Read more
-                          </a>
+                          </Link>
                         </p>
                         <div className="d-flex flex-column flex-lg-row align-items-center justify-content-center mt-5">
-                          <a
+                          <Link
                             className="me-lg-3 mb-4 mb-lg-0"
                             href="waitlist.html"
                             target="_blank"
@@ -53,14 +135,14 @@ export const Home = () => {
                               src={GooglePlayBadge}
                               alt="..."
                             />
-                          </a>
-                          <a href="waitlist.html" target="_blank">
+                          </Link>
+                          <Link href="waitlist.html" target="_blank">
                             <img
                               className="app-badge"
-                              src="../assets/img/app-store-badge.svg"
+                              src={AppStoreBadge}
                               alt="..."
                             />
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -78,7 +160,7 @@ export const Home = () => {
                         <div className="px-5 px-sm-0">
                           <img
                             className="img-fluid"
-                            src="../assets/img/Riley iPhone Mockup.png"
+                            src={RileyIphone}
                             alt="Riley Notifications Screenshot"
                           />
                         </div>
@@ -86,12 +168,12 @@ export const Home = () => {
                           Riley will help you cultivate a healthier routine with
                           personalized recommendations precisely when you need
                           them.
-                          <a href="riley.html" target="_blank">
+                          <Link href="riley.html" target="_blank">
                             Read more.
-                          </a>
+                          </Link>
                         </p>
                         <div className="d-flex flex-column flex-lg-row align-items-center justify-content-center mt-5">
-                          <a
+                          <Link
                             className="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0 justify-content-center"
                             href="riley.html"
                             target="_blank"
@@ -99,7 +181,7 @@ export const Home = () => {
                             <span className="d-flex align-items-center">
                               <span className="small">Join The Waitlist</span>
                             </span>
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -143,7 +225,7 @@ export const Home = () => {
                         <div className="px-5 px-sm-0">
                           <img
                             className="img-fluid"
-                            src="../assets/img/BirthdAI iPhone Mockup.png"
+                            src={BirthAIIphone}
                             alt="Riley Notifications Screenshot"
                           />
                         </div>
@@ -151,29 +233,29 @@ export const Home = () => {
                           Craft personalized birthday wishes and set birthday
                           reminders. With Birthd.AI, every message feels special
                           and unique.
-                          <a href="birthdai.html" target="_blank">
+                          <Link href="birthdai.html" target="_blank">
                             Read more.
-                          </a>
+                          </Link>
                         </p>
                         <div className="d-flex flex-column flex-lg-row align-items-center justify-content-center mt-5">
-                          <a
+                          <Link
                             className="me-lg-3 mb-4 mb-lg-0"
                             href="waitlist.html"
                             target="_blank"
                           >
                             <img
                               className="app-badge"
-                              src="../assets/img/google-play-badge.svg"
+                              src={GooglePlayBadge}
                               alt="..."
                             />
-                          </a>
-                          <a href="waitlist.html">
+                          </Link>
+                          <Link href="waitlist.html">
                             <img
                               className="app-badge"
-                              src="../assets/img/app-store-badge.svg"
+                              src={AppStoreBadge}
                               alt="..."
                             />
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -191,7 +273,7 @@ export const Home = () => {
                         <div className="px-5 px-sm-0">
                           <img
                             className="img-fluid"
-                            src="../assets/img/Riley iPhone Mockup.png"
+                            src={RileyIphone}
                             alt="Riley Notifications Screenshot"
                           />
                         </div>
@@ -199,12 +281,12 @@ export const Home = () => {
                           Riley will help you cultivate a healthier routine with
                           personalized recommendations precisely when you need
                           them.
-                          <a href="riley.html" target="_blank">
+                          <Link href="riley.html" target="_blank">
                             Read more
-                          </a>
+                          </Link>
                         </p>
                         <div className="d-flex flex-column flex-lg-row align-items-center justify-content-center mt-5">
-                          <a
+                          <Link
                             className="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0 justify-content-center"
                             href="riley.html"
                             target="_blank"
@@ -212,7 +294,7 @@ export const Home = () => {
                             <span className="d-flex align-items-center">
                               <span className="small">Join The Waitlist</span>
                             </span>
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -253,7 +335,7 @@ export const Home = () => {
                         <div className="px-5 px-sm-0">
                           <img
                             className="img-fluid"
-                            src="../assets/img/BirthdAIiPhoneMockup.png"
+                            src={BirthAIIphone}
                             alt="Riley Notifications Screenshot"
                           />
                         </div>
@@ -266,29 +348,29 @@ export const Home = () => {
                           Craft personalized birthday wishes and set birthday
                           reminders. With Birthd.AI, every message feels special
                           and unique.
-                          <a href="birthdai.html" target="_blank">
+                          <Link href="birthdai.html" target="_blank">
                             Read more.
-                          </a>
+                          </Link>
                         </p>
                         <div className="d-flex flex-column flex-lg-row align-items-center justify-content-center mt-5">
-                          <a
+                          <Link
                             className="me-lg-3 mb-4 mb-lg-0"
                             href="waitlist.html"
                             target="_blank"
                           >
                             <img
                               className="app-badge"
-                              src="../assets/img/google-play-badge.svg"
+                              src={GooglePlayBadge}
                               alt="..."
                             />
-                          </a>
-                          <a href="waitlist.html" target="_blank">
+                          </Link>
+                          <Link href="waitlist.html" target="_blank">
                             <img
                               className="app-badge"
-                              src="../assets/img/app-store-badge.svg"
+                              src={AppStoreBadge}
                               alt="..."
                             />
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -303,7 +385,7 @@ export const Home = () => {
                         <div className="px-5 px-sm-0">
                           <img
                             className="img-fluid"
-                            src="../assets/img/Riley iPhone Mockup.png"
+                            src={RileyIphone}
                             alt="Riley Notifications Screenshot"
                           />
                         </div>
@@ -316,12 +398,12 @@ export const Home = () => {
                           Riley will help you cultivate a healthier routine with
                           personalized recommendations precisely when you need
                           them.
-                          <a href="riley.html" target="_blank">
+                          <Link href="riley.html" target="_blank">
                             Read more.
-                          </a>
+                          </Link>
                         </p>
                         <div className="d-flex flex-column flex-lg-row align-items-center justify-content-center mt-5">
-                          <a
+                          <Link
                             className="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0 justify-content-center"
                             href="riley.html"
                             target="_blank"
@@ -329,7 +411,7 @@ export const Home = () => {
                             <span className="d-flex align-items-center">
                               <span className="small">Join The Waitlist</span>
                             </span>
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -358,10 +440,7 @@ export const Home = () => {
           </div>
         </div>
       </section>
-      <section
-        className="cta"
-        style={{ backgroundImage: 'url("../assets/img/CTA Background.jpg")' }}
-      >
+      <section className="cta" style={CTAStyle}>
         <div className="cta-content" id="download">
           <div className="container px-5">
             <h2 className="text-white text-center display-3 lh-1 mb-4">
@@ -369,24 +448,16 @@ export const Home = () => {
               <br /> No credit card required.
             </h2>
             <div className="d-flex flex-column flex-lg-row align-items-center justify-content-center">
-              <a
+              <Link
                 className="me-lg-3 mb-4 mb-lg-0"
                 href="waitlist.html"
                 target="_blank"
               >
-                <img
-                  className="app-badge"
-                  src="../assets/img/google-play-badge.svg"
-                  alt="..."
-                />
-              </a>
-              <a href="waitlist.html" target="_blank">
-                <img
-                  className="app-badge"
-                  src="../assets/img/app-store-badge.svg"
-                  alt="..."
-                />
-              </a>
+                <img className="app-badge" src={GooglePlayBadge} alt="..." />
+              </Link>
+              <Link to="/waitlist" target="_blank">
+                <img className="app-badge" src={AppStoreBadge} alt="..." />
+              </Link>
             </div>
           </div>
         </div>
