@@ -49,7 +49,7 @@ export const Signup = () => {
           Sign Up with Apple
         </button>
       </div>
-      <div className="d-flex w-25 h-100 bg-primary  bd-highlight">2</div>
+      <div className="d-flex w-25 h-100 bg-primary  bd-highlight login-sidepanel"></div>
     </div>
   )
 }

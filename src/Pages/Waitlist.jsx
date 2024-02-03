@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import backgroundImage from "../assets/img/HeaderBackground.jpg";
 import MobileAIApplication from "../assets/img/HeroSectionImage.png";
 export const Waitlist = () => {
   const headerStyle = {
     backgroundImage: `url(${backgroundImage})`,
   };
+  useEffect(() => {
+    document.title = "Navegaid | Waitlist";
+  }, []);
   return (
     <div>
       <header className="masthead" style={headerStyle}>

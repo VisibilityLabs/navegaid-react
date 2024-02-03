@@ -41,7 +41,7 @@ export const PasswordRecovery = () => {
           Back to Login
         </Link>
       </div>
-      <div className="d-flex w-25 h-100 bg-primary  bd-highlight">2</div>
+      <div className="d-flex w-25 h-100 bg-primary  bd-highlight login-sidepanel"></div>
     </div>
   );
 };

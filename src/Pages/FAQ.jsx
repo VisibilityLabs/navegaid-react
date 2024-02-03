@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import backgroundImage from "../assets/img/HeaderBackground.jpg";
 export const FAQ = () => {
   const headerStyle = {
     backgroundImage: `url(${backgroundImage})`,
   };
+  useEffect(() => {
+    document.title = "Navegaid | FAQ";
+  }, []);
   return (
     <div>
       <header className="masthead" style={headerStyle}>

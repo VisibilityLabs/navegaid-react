@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import backgroundImage from "../assets/img/HeaderBackground.jpg";
 
 export const PrivacyPolicy = () => {
   const headerStyle = {
     backgroundImage: `url(${backgroundImage})`,
   };
+  useEffect(() => {
+    document.title = "Navegaid | Privacy Policy";
+  }, []);
   return (
     <div>
       <header className="masthead" style={headerStyle}>

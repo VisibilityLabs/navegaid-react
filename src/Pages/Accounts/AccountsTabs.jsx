@@ -26,7 +26,7 @@ export const AccountsTabs = () => {
           })}
         </div>
         <div>
-          <div className="small my-3 mx-3">Would youlike to enable {active}?</div>
+          <div className="small my-3 mx-3">Would you like to enable {active}?</div>
            <div  className="d-flex my-5 mx-3 rounded"
            style={{width:"80px",backgroundColor:`${toggle?"#28c577":"#dbdbdb"}`,height:"30px",border:"1px solid black",justifyContent:`${toggle?"start":"end"}`}} onClick={()=>setToggle(!toggle)}>
               <div style={{width:"40%",height:"100%",backgroundColor:"white"}}></div>

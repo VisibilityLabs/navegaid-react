@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import backgroundImage from "../assets/img/HeaderBackground.jpg";
 import BirthAIIphone from "../assets/img/BirthdAIiPhoneMockup.png";
 import GooglePlayBadge from "../assets/img/google-play-badge.svg";
@@ -16,6 +16,9 @@ export const Home = () => {
   const BackgroundStyle = {
     backgroundImage: `url(${backgroundImage})`,
   };
+  useEffect(() => {
+    document.title = "Navegaid - Achieve Healthy & Balanced Living";
+  }, []);
   return (
     <>
       <>

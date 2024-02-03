@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import backgroundImage from "../assets/img/HeaderBackground.jpg";
 import videoSource from "../assets/img/404-demo-screen.mp4";
@@ -6,6 +6,9 @@ export const NotFound = () => {
   const headerStyle = {
     backgroundImage: `url(${backgroundImage})`,
   };
+  useEffect(() => {
+    document.title = "Navegaid - Achieve Healthy & Balanced Living";
+  }, []);
   return (
     <>
       <header className="masthead" style={headerStyle}>
