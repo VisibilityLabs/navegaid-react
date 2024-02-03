@@ -40,11 +40,20 @@ export const NavBar = () => {
             </li>
           </ul>
           <button
-            className="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0"
+            className="btn btn-primary btn-sm rounded-pill px-2 py-2 m-2 mb-lg-0"
             onclick="location.href='#apps'"
           >
             <span className="d-flex align-items-center">
-              <span className="small">Discover Our Apps</span>
+              <Link to="/signup" className="small text-decoration-none text-white">Create new Account</Link>
+            </span>
+          </button>
+          <button
+            className="btn btn-sm rounded-pill px-2 py-2 m-2 mb-lg-0"
+            onclick="location.href='#apps'"
+            style={{backgroundColor:"rgb(202, 202, 228)"}}
+          >
+            <span className="d-flex align-items-center">
+              <Link to="/login" className="small text-decoration-none ">Login</Link>
             </span>
           </button>
         </div>

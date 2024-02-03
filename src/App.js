@@ -8,8 +8,17 @@ import {
   FAQ,
   PrivacyPolicy,
   TermsOfServices,
-} from "./Pages/entry";
-import { Footer, NavBar } from "./Components/entry";
+  Login,
+  PasswordRecovery,
+  Signup,
+  Accounts,
+  Riley
+  
+  
+} from "./Pages";
+
+import { Footer, NavBar } from "./Components";
+import { Birthdai } from "./Pages/Birtdai/Birthdai";
 
 function CustomRoute({ element }) {
   return (
@@ -45,6 +54,31 @@ function App() {
             element={<CustomRoute element={<TermsOfServices />} />}
             path="/terms-of-services"
           />
+           <Route
+            element={<Birthdai/>}
+            path="/birthdai"
+          />
+          <Route
+            element={<Riley/>}
+            path="/riley"
+          />
+           <Route
+            element={<Login/>}
+            path="/login"
+          />
+          <Route
+            element={<PasswordRecovery/>}
+            path="/password"
+          />
+          <Route
+            element={<Signup/>}
+            path="/signup"
+          />
+          <Route
+            element={<Accounts/>}
+            path="/account"
+          />
+
           <Route element={<CustomRoute element={<NotFound />} />} path="*" />
         </Routes>
       </BrowserRouter>

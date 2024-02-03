@@ -120,14 +120,14 @@ export const Home = () => {
                           Craft personalized birthday wishes and set birthday
                           reminders. With Birthd.AI, every message feels special
                           and unique.
-                          <Link href="birthdai.html" target="_blank">
+                          <Link to="/birthdai" target="_blank">
                             Read more
                           </Link>
                         </p>
                         <div className="d-flex flex-column flex-lg-row align-items-center justify-content-center mt-5">
                           <Link
                             className="me-lg-3 mb-4 mb-lg-0"
-                            href="waitlist.html"
+                            to="/waitlist"
                             target="_blank"
                           >
                             <img
@@ -136,7 +136,7 @@ export const Home = () => {
                               alt="..."
                             />
                           </Link>
-                          <Link href="waitlist.html" target="_blank">
+                          <Link to="/waitlist" target="_blank">
                             <img
                               className="app-badge"
                               src={AppStoreBadge}
@@ -168,14 +168,14 @@ export const Home = () => {
                           Riley will help you cultivate a healthier routine with
                           personalized recommendations precisely when you need
                           them.
-                          <Link href="riley.html" target="_blank">
+                          <Link to="/riley" target="_blank">
                             Read more.
                           </Link>
                         </p>
                         <div className="d-flex flex-column flex-lg-row align-items-center justify-content-center mt-5">
                           <Link
                             className="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0 justify-content-center"
-                            href="riley.html"
+                            to="/riley"
                             target="_blank"
                           >
                             <span className="d-flex align-items-center">
@@ -233,14 +233,14 @@ export const Home = () => {
                           Craft personalized birthday wishes and set birthday
                           reminders. With Birthd.AI, every message feels special
                           and unique.
-                          <Link href="birthdai.html" target="_blank">
+                          <Link to="/birthdai" target="_blank">
                             Read more.
                           </Link>
                         </p>
                         <div className="d-flex flex-column flex-lg-row align-items-center justify-content-center mt-5">
                           <Link
                             className="me-lg-3 mb-4 mb-lg-0"
-                            href="waitlist.html"
+                            to="/waitlist"
                             target="_blank"
                           >
                             <img
@@ -249,7 +249,7 @@ export const Home = () => {
                               alt="..."
                             />
                           </Link>
-                          <Link href="waitlist.html">
+                          <Link to="/waitlist">
                             <img
                               className="app-badge"
                               src={AppStoreBadge}
@@ -281,7 +281,7 @@ export const Home = () => {
                           Riley will help you cultivate a healthier routine with
                           personalized recommendations precisely when you need
                           them.
-                          <Link href="riley.html" target="_blank">
+                          <Link to="/riley" target="_blank">
                             Read more
                           </Link>
                         </p>
@@ -348,14 +348,14 @@ export const Home = () => {
                           Craft personalized birthday wishes and set birthday
                           reminders. With Birthd.AI, every message feels special
                           and unique.
-                          <Link href="birthdai.html" target="_blank">
+                          <Link to="/birthdai" target="_blank">
                             Read more.
                           </Link>
                         </p>
                         <div className="d-flex flex-column flex-lg-row align-items-center justify-content-center mt-5">
                           <Link
                             className="me-lg-3 mb-4 mb-lg-0"
-                            href="waitlist.html"
+                            to="/waitlist"
                             target="_blank"
                           >
                             <img
@@ -364,7 +364,7 @@ export const Home = () => {
                               alt="..."
                             />
                           </Link>
-                          <Link href="waitlist.html" target="_blank">
+                          <Link to="/waitlist" target="_blank">
                             <img
                               className="app-badge"
                               src={AppStoreBadge}
@@ -398,14 +398,14 @@ export const Home = () => {
                           Riley will help you cultivate a healthier routine with
                           personalized recommendations precisely when you need
                           them.
-                          <Link href="riley.html" target="_blank">
+                          <Link to="/riley" target="_blank">
                             Read more.
                           </Link>
                         </p>
                         <div className="d-flex flex-column flex-lg-row align-items-center justify-content-center mt-5">
                           <Link
                             className="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0 justify-content-center"
-                            href="riley.html"
+                            to="/riley"
                             target="_blank"
                           >
                             <span className="d-flex align-items-center">
@@ -450,7 +450,7 @@ export const Home = () => {
             <div className="d-flex flex-column flex-lg-row align-items-center justify-content-center">
               <Link
                 className="me-lg-3 mb-4 mb-lg-0"
-                href="waitlist.html"
+                to="/riley"
                 target="_blank"
               >
                 <img className="app-badge" src={GooglePlayBadge} alt="..." />
