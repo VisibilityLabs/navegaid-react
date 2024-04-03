@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 export const PasswordRecovery = () => {
   const [request, setRequest] = useState(false);
+
+  
   return (
     <div className="d-flex vw-100 vh-100">
       <div className="d-flex flex-column w-75 h-100  bd-highlight justify-content-center align-items-center">

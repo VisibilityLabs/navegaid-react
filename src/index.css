@@ -11145,7 +11145,7 @@ footer a:focus {
 }
 
 .login-sidepanel {
-    background-image: url('./assets/login-side-image.png');
+    background-image: url('./assets/login-side-image.jpg');
     background-size: cover;
     background-position: center;
     min-width: min(300px, 30vw);

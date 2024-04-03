@@ -2,34 +2,50 @@ import React, { useState } from "react";
 import { Footer } from "../../Components";
 import { AccountsTabs } from "./AccountsTabs";
 import { AccountSettings } from "./AccountSettings";
-
+import {Outlet, useNavigate} from 'react-router-dom'
+import './accounts.css';
 export const Accounts = () => {
-  const [isAccountActive, setIsAccountActive] = useState(true);
+  const navigate=useNavigate()
+  const redirectToSettings = (e) => {
+    e.preventDefault();
+    navigate('settings')
+  }
   return (
     <>
-      <div className="vw-100 d-flex justify-content-end flex-column align-items-end p-3 m-0 ">
-        <div
-          className="border-2 border-dark p-1 m-0 border"
-          onClick={() => setIsAccountActive(true)}
-        >
-          Accounts
+      <div className="account-header">
+        <div className="accounts-logo">
+          <img src="https://via.placeholder.com/50" alt="logo" />
         </div>
-        <div
-          className="border-2 border-dark p-1 m-0 border d-flex justify-content-center"
-          style={{ width: "160px" }}
-          onClick={() => setIsAccountActive(false)}
-        >
-          Account Settings
-        </div>
-        <div
-          className="border-2 border-dark p-1 m-0 border d-flex justify-content-center"
-          style={{ width: "160px" }}
-        >
-          Logout
+        <div className="accounts-dropdown">
+          {/* create a bootstrap dropdown with account as the dropdown title and account settings and logout as the main  options */}
+          <div className="dropdown">
+            <button
+              className="btn btn-secondary "
+              type="button"
+              id="dropdownMenuButton1"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Account
+            </button>
+            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li>
+                <a className="dropdown-item" href="#" onClick={(e) => redirectToSettings(e)}>
+                  Account Settings
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="#">
+                  Logout
+                </a>
+              </li>
+            </ul>
+            </div>
+            
         </div>
       </div>
-      {isAccountActive?
-      <AccountsTabs />:<AccountSettings/>}
+      {/* {isAccountActive ? <AccountsTabs /> : <AccountSettings />} */}
+      <Outlet/>
       <Footer />
     </>
   );

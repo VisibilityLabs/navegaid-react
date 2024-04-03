@@ -1,0 +1,10 @@
+.account-header {
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accounts-content-container {
+    padding: 40px;
+}

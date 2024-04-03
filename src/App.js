@@ -19,6 +19,8 @@ import {
 
 import { Footer, NavBar } from "./Components";
 import { Birthdai } from "./Pages/Birtdai/Birthdai";
+import { AccountsTabs } from "./Pages/Accounts/AccountsTabs";
+import { AccountSettings } from "./Pages/Accounts/AccountSettings";
 
 function CustomRoute({ element }) {
   return (
@@ -77,7 +79,10 @@ function App() {
           <Route
             element={<Accounts/>}
             path="/account"
-          />
+          >
+            <Route element={<AccountsTabs />} index />
+            <Route element={<AccountSettings />} path="settings" />
+          </Route>
 
           <Route element={<CustomRoute element={<NotFound />} />} path="*" />
         </Routes>

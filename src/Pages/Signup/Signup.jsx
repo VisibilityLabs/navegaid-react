@@ -1,11 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { POST } from '../../api';
 
 export const Signup = () => {
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+POST("register", { email, password })
+.then((res) => {
+  console.log(res); 
+})
+.catch((err) => {
+  console.log(err);
+});
+    console.log("submitted");
+  };
+
   return (
     <div className="d-flex vw-100 vh-100">
       <div className="d-flex flex-column w-75 h-100  bd-highlight justify-content-center align-items-center">
         <h3 className="mb-5">Create a new Naivegaid account</h3>
-        <form className="d-flex justify-content-center align-items-center flex-column">
+        <form className="d-flex justify-content-center align-items-center flex-column" onSubmit={(e)=>onSubmit(e)} >
           <div className="form-group my-2">
             <input
               type="email"
@@ -13,6 +31,8 @@ export const Signup = () => {
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
               placeholder="Enter email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="form-group my-2">
@@ -21,6 +41,8 @@ export const Signup = () => {
               className="form-control"
               id="exampleInputPassword1"
               placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
        
