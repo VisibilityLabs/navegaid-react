@@ -20,10 +20,55 @@ export const Login = () => {
     console.log("submitted");
   };
 
+  const continueAppleSignIn = async () => {
+    try {
+    setIsLoading(true);
+    
+    const credential = await AppleAuthentication.signInAsync({
+    requestedScopes: [
+    AppleAuthentication.AppleAuthenticationScope.FULL_NAME,
+    AppleAuthentication.AppleAuthenticationScope.EMAIL,
+    ],
+    });
+    
+    //console.log('Apple Sign-In credential:', credential);
+    
+    const signInData = {
+    token: credential.identityToken,
+    user: credential.user
+    };
+    
+    // Add email and fullName to signInData only if they are not null
+    if (credential.email) {
+    signInData.email = credential.email;
+    }
+    if (credential.fullName && (credential.fullName.givenName || credential.fullName.familyName)) {
+    signInData.fullName = {
+    givenName: credential.fullName.givenName,
+    familyName: credential.fullName.familyName
+    };
+    }
+    
+    await appleSignIn(signInData);
+    
+    if (isAuthenticated) {
+    navigation.navigate('CalendarScreen');
+    }
+    } catch (e) {
+    if (e.code === 'ERR_CANCELED') {
+    // User canceled the sign-in
+    } else {
+    console.error("Error during Apple Sign-In: ", e);
+    setErrorMessage(e.message);
+    }
+    } finally {
+    setIsLoading(false);
+    }
+    };
 
   const appleSignIn = async ({ token, user, email, fullName }) => {
     try {
-      const signInResponse = await apiSignInWithApple({ token, user, email, fullName });
+      const signInResponse = await signInWithApple({ token, user, email, fullName });
 
       if (signInResponse && signInResponse.token) {
         await AsyncStorage.setItem('token', signInResponse.token);
