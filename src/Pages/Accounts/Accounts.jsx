@@ -3,6 +3,9 @@ import { Footer } from "../../Components";
 import { AccountsTabs } from "./AccountsTabs";
 import { AccountSettings } from "./AccountSettings";
 import {Outlet, useNavigate} from 'react-router-dom'
+import Logo from '../../assets/img/NavegaidLogo.png';
+import { Link } from "react-router-dom";
+
 import './accounts.css';
 export const Accounts = () => {
   const navigate=useNavigate()
@@ -13,9 +16,9 @@ export const Accounts = () => {
   return (
     <>
       <div className="account-header">
-        <div className="accounts-logo">
-          <img src="https://via.placeholder.com/50" alt="logo" />
-        </div>
+        <Link className="accounts-logo" to="/account">
+          <img src={Logo} alt="Navegaid Logo" style={{ height: 50 }} />{" "}
+        </Link>
         <div className="accounts-dropdown">
           {/* create a bootstrap dropdown with account as the dropdown title and account settings and logout as the main  options */}
           <div className="dropdown">
@@ -35,9 +38,9 @@ export const Accounts = () => {
                 </a>
               </li>
               <li>
-                <a className="dropdown-item" href="#">
+                <Link className="dropdown-item" to={'/'} >
                   Logout
-                </a>
+                </Link>
               </li>
             </ul>
             </div>

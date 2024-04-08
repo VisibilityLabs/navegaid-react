@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import { POST } from '../../api';
+import AppleLogin from 'react-apple-login';
+import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
+
 
 export const Signup = () => {
 
@@ -30,7 +33,7 @@ POST("register", { email, password })
               className="form-control "
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
-              placeholder="Enter email"
+              placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -55,21 +58,46 @@ POST("register", { email, password })
           </button>
         </form>
         <h2>or</h2>
-
-        <button
-          type="submit"
-          class=" rounded px-2 py-1  text-white border-0 my-3"
-          style={{ backgroundColor: "rgb(200,50,50)" }}
-        >
-          Sign Up with Google
-        </button>
-        <button
-          type="submit"
-          class=" rounded px-2 py-1  text-white border-0 my-3"
-          style={{ backgroundColor: "rgb(0, 0, 0)" }}
-        >
-          Sign Up with Apple
-        </button>
+        <GoogleOAuthProvider clientId="http://264190521545-pp055k4jcrid04584koavs924ck5ua78.apps.googleusercontent.com">
+          {/* Sign Up with Google */}
+          <GoogleLogin
+            onSuccess={response => {
+              console.log(response);
+            }}
+            onError={response => {
+              console.log(response);
+            }}
+            useOneTap
+          />
+        </GoogleOAuthProvider>
+        <AppleLogin
+          clientId="com.example.client-web"
+          redirectURI="https://example.com"
+          scope="email name"
+          usePopup={true}
+          responseMode="query"
+          
+          render={renderProps => (
+            <button
+              type="submit"
+              class=" rounded px-2 py-1  text-white border-0 my-3"
+              style={{ backgroundColor: 'rgb(0, 0, 0)' }}
+              onClick={renderProps.onClick}
+            >
+              Sign in with Apple
+            </button>
+          )}
+          callback={response => {
+            // console.log(response);
+            // if (!response.authorization) return console.log('error');
+            // signInWithApple({
+            //   token: response.authorization.id_token,
+            //   user: response.user,
+            //   email: response.email,
+            //   fullName: response.fullName,
+            // });
+          }}
+        />
       </div>
       <div className="d-flex w-25 h-100 bg-primary  bd-highlight login-sidepanel"></div>
     </div>
